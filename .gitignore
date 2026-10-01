@@ -1,0 +1,12 @@
+# secrets
+.env
+# environments and caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# generated (rebuild with: python -m rag.ingest)
+rag/index/
+logs/
+run_outputs/

@@ -1,0 +1,29 @@
+FREE OPTION: Google Gemini (no credit card needed)
+==================================================
+
+1. Go to https://aistudio.google.com/apikey , sign in with your Google account,
+   click "Create API key" and copy it.
+
+2. Open the file  .env  (in this folder) with Notepad.
+   Select everything in it (Ctrl + A), delete it, and paste the 7 lines below.
+   Then put your Gemini key right after  OPENAI_API_KEY=  (no spaces).
+
+OPENAI_API_KEY=
+LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+MODEL_NAME=gemini-3.5-flash-lite
+EMBEDDING_MODEL=gemini-embedding-001
+LLM_MAX_RETRIES=6
+LLM_REQUEST_DELAY_SECONDS=4
+JUDGE_MODEL_NAME=
+
+3. Save (Ctrl + S), close Notepad, and double click RUN_EVERYTHING.bat.
+
+Notes
+- The variable is still called OPENAI_API_KEY because the app talks to Gemini
+  through Gemini's OpenAI-compatible connection. Your Gemini key goes there.
+- Free tiers limit how many requests you can make per minute and per day.
+  The delay and retry settings above slow the app down to stay under the limit.
+- If you see "model not found" or "not available on the free tier", open
+  https://ai.google.dev/gemini-api/docs/models , pick another Flash or
+  Flash-Lite model name, and replace the MODEL_NAME value.
+- Do not share your key with anyone or paste it into chat.
