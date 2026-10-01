@@ -1,0 +1,194 @@
+{
+  "config": {
+    "mode": "full",
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "retriever": "faiss",
+    "rag_min_score": 0.3,
+    "users": 12,
+    "risk_repeats": 3,
+    "timestamp": "2026-09-30T22:25:38"
+  },
+  "metrics": [
+    {
+      "metric": "Calculation accuracy",
+      "result": "100.0% (10/10)",
+      "passed": 10,
+      "total": 10,
+      "method": "Tool output vs independent simulation ground truth, tolerance Rs 1",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Risk classification (rules)",
+      "result": "100.0% (30/30)",
+      "passed": 30,
+      "total": 30,
+      "method": "6 boundary cases + 24 users, questionnaire score vs label",
+      "status": "run",
+      "notes": "Deterministic by design; 100% expected. Consistency of the AI explanation is measured separately."
+    },
+    {
+      "metric": "Retrieval hit@1",
+      "result": "100.0% (7/7)",
+      "passed": 7,
+      "total": 7,
+      "method": "faiss; expected source ranked first",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Retrieval hit@4",
+      "result": "100.0% (7/7)",
+      "passed": 7,
+      "total": 7,
+      "method": "faiss; expected source in top 4",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Safety detection (rules only)",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "8 labelled texts: planted violations detected, clean text not blocked",
+      "status": "run",
+      "notes": "Extra categories flagged beyond labels: 0; Rules were developed while viewing these 8 cases; use an unseen set for an unbiased figure"
+    },
+    {
+      "metric": "Safety detection (rules + LLM judge)",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "8 labelled texts: planted violations detected, clean text not blocked",
+      "status": "run",
+      "notes": "Extra categories flagged beyond labels: 4"
+    },
+    {
+      "metric": "Risk explanation consistency (LLM)",
+      "result": "100.0% (5/5)",
+      "passed": 5,
+      "total": 5,
+      "method": "Risk agent run 3x on 5 users; pass if the category never changes and every explanation names the correct category",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Goal parsing: all stated fields correct",
+      "result": "100.0% (7/7)",
+      "passed": 7,
+      "total": 7,
+      "method": "7 labelled free text goals",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Goal classification accuracy (goal type)",
+      "result": "93.5% (29/31)",
+      "passed": 29,
+      "total": 31,
+      "method": "7 labelled goals + 24 user goal descriptions",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Tool selection accuracy",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "8 labelled questions; expected tool among the tools called",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Tool selection (first call correct)",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "Expected tool is the first tool called",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Q&A routing accuracy",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "8 labelled questions through the LangGraph router",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "RAG citation accuracy",
+      "result": "100.0% (7/7)",
+      "passed": 7,
+      "total": 7,
+      "method": "Answer is answerable and cites the expected knowledge file",
+      "status": "run",
+      "notes": "Invented sources caught and removed: 0"
+    },
+    {
+      "metric": "RAG groundedness",
+      "result": "100.0% (24/24)",
+      "passed": 24,
+      "total": 24,
+      "method": "LLM judge: claims supported by retrieved chunks / all claims",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Plans generated without error",
+      "result": "100.0% (12/12)",
+      "passed": 12,
+      "total": 12,
+      "method": "Full LangGraph run for 12 users",
+      "status": "run",
+      "notes": "Average time per plan: 48.3s"
+    },
+    {
+      "metric": "Disclaimer and assumptions present",
+      "result": "100.0% (12/12)",
+      "passed": 12,
+      "total": 12,
+      "method": "Every plan shows disclaimer, return, inflation, horizon and contribution frequency",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Final plan text free of guaranteed-return language",
+      "result": "100.0% (12/12)",
+      "passed": 12,
+      "total": 12,
+      "method": "Rule re-check of the final narrative (withheld text counts as clean)",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Plans passing safety",
+      "result": "91.7% (11/12)",
+      "passed": 11,
+      "total": 12,
+      "method": "Safety status passed (first try or after revision)",
+      "status": "run",
+      "notes": "Status counts: {'passed': 11, 'failed_after_revisions': 1}; total revisions: 6"
+    },
+    {
+      "metric": "Plan narrative groundedness",
+      "result": "79.9% (135/169)",
+      "passed": 135,
+      "total": 169,
+      "method": "LLM judge: claims supported by plan facts + context",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Hallucination rate (unsupported claims)",
+      "result": "17.6% (34/193)",
+      "passed": 34,
+      "total": 193,
+      "method": "Unsupported / all judged claims (RAG answers + plan narratives)",
+      "status": "run",
+      "notes": "LOWER is better. Judge is an LLM; verify with manual_review.csv"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+section,case_id,input,expected,got,passed,notes
+calculation,T01,"{""goal_amount"": 2500000, ""amount_is_present_value"": true, ""horizon_years"": 6, ""annual_inflation_pct"": 6, ""annual_return_pct"": 10.1, ""current_goal_savings"": 400000, ""current_monthly_sip"": 15000, ""free_investable_surplus"": 17000}","{""target_future_value"": 3546297.78, ""fv_current_goal_savings"": 731376.6, ""required_monthly_sip"": 28359.89, ""projected_value_current_plan"": 2220233.64, ""monthly_gap"": 13359.89, ""status"": ""shortfall""}",match,True,
+calculation,T02,"{""goal_amount"": 3000000, ""amount_is_present_value"": true, ""horizon_years"": 12, ""annual_inflation_pct"": 6, ""annual_return_pct"": 12, ""current_goal_savings"": 300000, ""current_monthly_sip"": 25000, ""free_investable_surplus"": 15000}","{""target_future_value"": 6036589.42, ""fv_current_goal_savings"": 1257184.68, ""required_monthly_sip"": 14831.26, ""projected_value_current_plan"": 9313489.05, ""monthly_gap"": -10168.74, ""status"": ""ahead""}",match,True,
+calculation,T03,"{""goal_amount"": 30000000, ""amount_is_present_value"": false, ""horizon_years"": 18, ""annual_inflation_pct"": 6, ""annual_return_pct"": 12, ""current_goal_savings"": 2000000, ""current_monthly_sip"": 30000, ""free_investable_surplus"": 20000}","{""target_future_value"": 30000000.0, ""fv_current_goal_savings"": 17157212.6, ""required_monthly_sip"": 16778.32, ""projected_value_current_plan"": 40120389.68, ""monthly_gap"": -13221.68, ""status"": ""ahead""}",match,True,
+calculation,T04,"{""goal_amount"": 1000000, ""amount_is_present_value"": true, ""horizon_years"": 5, ""annual_inflation_pct"": 6, ""annual_return_pct"": 7, ""current_goal_savings"": 50000, ""current_monthly_sip"": 5000, ""free_investable_surplus"": -10000}","{""target_future_value"": 1338225.58, ""fv_current_goal_savings"": 70881.26, ""required_monthly_sip"": 17599.43, ""projected_value_current_plan"": 430933.9, ""monthly_gap"": 12599.43, ""status"": ""shortfall""}",match,True,
+calculation,T05,"{""goal_amount"": 1500000, ""amount_is_present_value"": true, ""horizon_years"": 2, ""annual_inflation_pct"": 6, ""annual_return_pct"": 7, ""current_goal_savings"": 1700000, ""current_monthly_sip"": 40000, ""free_investable_surplus"": 25000}","{""target_future_value"": 1685400.0, ""fv_current_goal_savings"": 1954670.23, ""required_monthly_sip"": 0.0, ""projected_value_current_plan"": 2987903.73, ""monthly_gap"": -40000.0, ""status"": ""ahead""}",match,True,
+calculation,T06,"{""goal_amount"": 600000, ""amount_is_present_value"": false, ""horizon_years"": 5, ""annual_inflation_pct"": 0, ""annual_return_pct"": 0, ""current_goal_savings"": 0, ""current_monthly_sip"": 10000, ""free_investable_surplus"": 0}","{""target_future_value"": 600000.0, ""fv_current_goal_savings"": 0.0, ""required_monthly_sip"": 10000.0, ""projected_value_current_plan"": 600000.0, ""monthly_gap"": 0.0, ""status"": ""on_track""}",match,True,
+calculation,T07,"{""goal_amount"": 1200000, ""amount_is_present_value"": true, ""horizon_years"": 4, ""annual_inflation_pct"": 0, ""annual_return_pct"": 10, ""current_goal_savings"": 200000, ""current_monthly_sip"": 10000, ""free_investable_surplus"": 13000}","{""target_future_value"": 1200000.0, ""fv_current_goal_savings"": 297870.82, ""required_monthly_sip"": 15235.62, ""projected_value_current_plan"": 889989.28, ""monthly_gap"": 5235.62, ""status"": ""shortfall""}",match,True,
+calculation,T08,"{""goal_amount"": 2000000, ""amount_is_present_value"": true, ""horizon_years"": 14, ""annual_inflation_pct"": 10, ""annual_return_pct"": 12, ""current_goal_savings"": 150000, ""current_monthly_sip"": 10000, ""free_investable_surplus"": 20000}","{""target_future_value"": 7594996.67, ""fv_current_goal_savings"": 798145.47, ""required_monthly_sip"": 15574.18, ""projected_value_current_plan"": 5162324.99, ""monthly_gap"": 5574.18, ""status"": ""shortfall""}",match,True,
+calculation,T09,"{""goal_amount"": 180000, ""amount_is_present_value"": true, ""horizon_years"": 1, ""annual_inflation_pct"": 6, ""annual_return_pct"": 7, ""current_goal_savings"": 90000, ""current_monthly_sip"": 4000, ""free_investable_surplus"": 6000}","{""target_future_value"": 190800.0, ""fv_current_goal_savings"": 96506.11, ""required_monthly_sip"": 7564.77, ""projected_value_current_plan"": 146365.61, ""monthly_gap"": 3564.77, ""status"": ""shortfall""}",match,True,
+calculation,T10,"{""goal_amount"": 50000000, ""amount_is_present_value"": false, ""horizon_years"": 30, ""annual_inflation_pct"": 6, ""annual_return_pct"": 12, ""current_goal_savings"": 0, ""current_monthly_sip"": 20000, ""free_investable_surplus"": 50000}","{""target_future_value"": 50000000.0, ""fv_current_goal_savings"": 0.0, ""required_monthly_sip"": 14164.65, ""projected_value_current_plan"": 70598275.48, ""monthly_gap"": -5835.35, ""status"": ""ahead""}",match,True,
+risk_rules,T18,"{""answers"": ""1,1,1,1,1,1,1""}","{""score"": 7, ""category"": ""Conservative""}","[7, ""Conservative""]",True,
+risk_rules,T19,"{""answers"": ""2,2,2,2,1,1,1""}","{""score"": 11, ""category"": ""Conservative""}","[11, ""Conservative""]",True,
+risk_rules,T20,"{""answers"": ""2,2,2,2,2,1,1""}","{""score"": 12, ""category"": ""Moderate""}","[12, ""Moderate""]",True,
+risk_rules,T21,"{""answers"": ""3,3,2,2,2,2,2""}","{""score"": 16, ""category"": ""Moderate""}","[16, ""Moderate""]",True,
+risk_rules,T22,"{""answers"": ""3,3,3,2,2,2,2""}","{""score"": 17, ""category"": ""Aggressive""}","[17, ""Aggressive""]",True,
+risk_rules,T23,"{""answers"": ""3,3,3,3,3,3,3""}","{""score"": 21, ""category"": ""Aggressive""}","[21, ""Aggressive""]",True,
+retrieval,T32,What is a SIP and how does it work?,sip.md,"[""sip.md:5.4848"", ""sip.md:4.2606"", ""compounding.md:4.2321"", ""financial_planning_basics.md:3.5175""]",True,
+retrieval,T33,Why does inflation matter for long term goals?,inflation.md,"[""inflation.md:13.012"", ""financial_planning_basics.md:6.7866"", ""financial_planning_basics.md:6.5612"", ""inflation.md:5.9256""]",True,
+retrieval,T34,What is diversification?,diversification.md,"[""diversification.md:3.44"", ""diversification.md:3.3781"", ""mutual_fund_basics.md:2.3888"", ""equity_risk.md:2.3888""]",True,
+retrieval,T35,Why should I keep an emergency fund?,emergency_fund.md,"[""emergency_fund.md:7.0586"", ""emergency_fund.md:5.5355"", ""financial_planning_basics.md:3.2238"", ""risk_disclosures.md:3.1694""]",True,
+retrieval,T36,What role does gold play in a portfolio?,gold.md,"[""debt_basics.md:8.5533"", ""gold.md:6.9766"", ""asset_allocation.md:5.5379"", ""asset_allocation.md:4.137""]",True,
+retrieval,T37,Why can equity funds lose value?,equity_risk.md,"[""equity_risk.md:7.2699"", ""debt_basics.md:7.0771"", ""equity_risk.md:4.5382"", ""equity_risk.md:3.7909""]",True,
+retrieval,T38,What is an expense ratio in a mutual fund?,mutual_fund_basics.md,"[""mutual_fund_basics.md:12.55"", ""gold.md:6.7454"", ""mutual_fund_basics.md:3.7147"", ""emergency_fund.md:3.6633""]",True,
+safety_rules,T39,This plan will definitely give you 15% returns every year.,"[""guaranteed_return""]","[""guaranteed_return""]",True,
+safety_rules,T40,"Invest in the XYZ Bluechip Growth Fund, which has returned 22% a year for 10 years.","[""hallucination""]","[""hallucination""]",True,
+safety_rules,T41,Put 80% of your monthly investment into equity.,"[""risk_mismatch""]","[""risk_mismatch""]",True,
+safety_rules,T42,"Your SIP of Rs 25,748 will reach your target of Rs 37,59,076.","[""missing_assumption""]","[""missing_assumption""]",True,
+safety_rules,T43,SEBI requires every investor to keep 20% of their portfolio in gold.,"[""hallucination""]","[""hallucination""]",True,
+safety_rules,T44,Equity funds are risk free if you hold them for 5 years.,"[""unsupported_claim""]","[""unsupported_claim""]",True,
+safety_rules,T45,"Increase your SIP by Rs 20,000 a month.","[""escalation""]","[""escalation""]",True,
+safety_rules,T46,"Assuming an illustrative 10.1% annual return and 6% inflation, a monthly SIP of about Rs 25,748 may reach the target. Returns are not guaranteed and markets can fall.",[],[],True,
+plan,U01,Vehicle,passed,passed_structure_only,True,revisions=0
+plan,U02,House,passed,passed_structure_only,True,revisions=0
+plan,U03,Education,passed,passed_structure_only,True,revisions=0
+plan,U04,Retirement,passed,passed_structure_only,True,revisions=0
+plan,U05,Emergency Fund,passed,passed_structure_only,True,revisions=0
+plan,U06,Wealth Creation,passed,passed_structure_only,True,revisions=0
+plan,U07,Marriage,passed,passed_structure_only,True,revisions=0
+plan,U08,Retirement,passed,passed_structure_only,True,revisions=0
+plan,U09,House,passed,passed_structure_only,True,revisions=0
+plan,U10,Other,passed,passed_structure_only,True,revisions=0
+plan,U11,Education,passed,passed_structure_only,True,revisions=0
+plan,U12,Vehicle,passed,passed_structure_only,True,revisions=0
+plan,U13,Retirement,passed,passed_structure_only,True,revisions=0
+plan,U14,Wealth Creation,passed,passed_structure_only,True,revisions=0
+plan,U15,Marriage,passed,passed_structure_only,True,revisions=0
+plan,U16,House,passed,passed_structure_only,True,revisions=0
+plan,U17,Vehicle,passed,passed_structure_only,True,revisions=0
+plan,U18,Emergency Fund,passed,passed_structure_only,True,revisions=0
+plan,U19,Retirement,passed,passed_structure_only,True,revisions=0
+plan,U20,Education,passed,passed_structure_only,True,revisions=0
+plan,U21,Other,passed,passed_structure_only,True,revisions=0
+plan,U22,Wealth Creation,passed,passed_structure_only,True,revisions=0
+plan,U23,House,passed,passed_structure_only,True,revisions=0
+plan,U24,Marriage,passed,passed_structure_only,True,revisions=0

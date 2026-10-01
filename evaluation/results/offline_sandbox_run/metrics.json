@@ -1,0 +1,167 @@
+{
+  "config": {
+    "mode": "offline",
+    "model": null,
+    "judge_model": null,
+    "retriever": "keyword (BM25 fallback)",
+    "rag_min_score": 0.3,
+    "users": 24,
+    "risk_repeats": 3,
+    "timestamp": "2026-09-30T08:21:18"
+  },
+  "metrics": [
+    {
+      "metric": "Calculation accuracy",
+      "result": "100.0% (10/10)",
+      "passed": 10,
+      "total": 10,
+      "method": "Tool output vs independent simulation ground truth, tolerance Rs 1",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Risk classification (rules)",
+      "result": "100.0% (30/30)",
+      "passed": 30,
+      "total": 30,
+      "method": "6 boundary cases + 24 users, questionnaire score vs label",
+      "status": "run",
+      "notes": "Deterministic by design; 100% expected. Consistency of the AI explanation is measured separately."
+    },
+    {
+      "metric": "Retrieval hit@1",
+      "result": "85.7% (6/7)",
+      "passed": 6,
+      "total": 7,
+      "method": "keyword (BM25 fallback); expected source ranked first",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Retrieval hit@4",
+      "result": "100.0% (7/7)",
+      "passed": 7,
+      "total": 7,
+      "method": "keyword (BM25 fallback); expected source in top 4",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Safety detection (rules only)",
+      "result": "100.0% (8/8)",
+      "passed": 8,
+      "total": 8,
+      "method": "8 labelled texts: planted violations detected, clean text not blocked",
+      "status": "run",
+      "notes": "Extra categories flagged beyond labels: 0; Rules were developed while viewing these 8 cases; use an unseen set for an unbiased figure"
+    },
+    {
+      "metric": "Risk explanation consistency (LLM)",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "Repeated risk agent runs",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "Goal classification accuracy (goal type)",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "31 labelled goal texts",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "Tool selection accuracy",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "8 labelled questions",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "Q&A routing accuracy",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "8 labelled questions",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "RAG citation accuracy",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "7 labelled questions",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "RAG groundedness",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "LLM judge",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "Plans generated without error",
+      "result": "100.0% (24/24)",
+      "passed": 24,
+      "total": 24,
+      "method": "Full LangGraph run for 24 users",
+      "status": "run",
+      "notes": "Average time per plan: 0.0s"
+    },
+    {
+      "metric": "Disclaimer and assumptions present",
+      "result": "100.0% (24/24)",
+      "passed": 24,
+      "total": 24,
+      "method": "Every plan shows disclaimer, return, inflation, horizon and contribution frequency",
+      "status": "run",
+      "notes": ""
+    },
+    {
+      "metric": "Final plan text free of guaranteed-return language",
+      "result": "Not run",
+      "passed": 24,
+      "total": 24,
+      "method": "Rule re-check of the final narrative (withheld text counts as clean)",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY (offline plans contain no AI text)"
+    },
+    {
+      "metric": "Plans passing safety",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "Safety status passed (first try or after revision)",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY (without it there is no AI text to check); Status counts: {'passed_structure_only': 24}; total revisions: 0"
+    },
+    {
+      "metric": "Plan narrative groundedness",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "LLM judge: claims supported by plan facts + context",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    },
+    {
+      "metric": "Hallucination rate (unsupported claims)",
+      "result": "Not run",
+      "passed": 0,
+      "total": 0,
+      "method": "Unsupported / all judged claims (RAG answers + plan narratives)",
+      "status": "not_run",
+      "notes": "needs OPENAI_API_KEY"
+    }
+  ]
+}
